@@ -1,7 +1,7 @@
-package com.example.fnfaffinity.backend.utils;
-import com.example.fnfaffinity.Main;
-import com.example.fnfaffinity.backend.scripting.Script;
-import com.example.fnfaffinity.novahandlers.NovaTimer;
+package NovaJaxe.novahandlers;
+import NovaJaxe.Main;
+import NovaJaxe.backend.scripting.Script;
+import NovaJaxe.novahandlers.NovaTimer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.animation.KeyFrame;
@@ -11,13 +11,13 @@ import java.io.IOException;
 import java.util.Arrays;
 import javafx.util.Duration;
 import org.xml.sax.SAXException;
-import com.example.fnfaffinity.novahandlers.NovaKeys;
+import NovaJaxe.novahandlers.NovaKeys;
 
-public class MusicBeatState extends Main {
+public class NovaState extends Main {
     public boolean isModState = false;
     public String modStateName = "";
     public static boolean active = false;
-    public static MusicBeatState globalNextState;
+    public static NovaState globalNextState;
     public static int curBeat = 0;
     public static int curStep = 0;
     protected static double bpm = 102;
@@ -60,7 +60,7 @@ public class MusicBeatState extends Main {
                         }
                     }));
 
-    public MusicBeatState() {
+    public NovaState() {
         //
         //init();
     }
@@ -144,8 +144,8 @@ public class MusicBeatState extends Main {
 
         }
     }
-    public static MusicBeatState previousState;
-    public void switchState(MusicBeatState nextState) {
+    public static NovaState previousState;
+    public void switchState(NovaState nextState) {
         if (canTransition) {
             canTransition = false;
             doTransition("out");
@@ -202,7 +202,7 @@ public class MusicBeatState extends Main {
         //script.call("addSpriteCallback");
         script.update();
         if (script.get("camGame") != null)
-            camGame = (com.example.fnfaffinity.novahandlers.NovaCamera) script.get("camGame");
+            camGame = (NovaJaxe.novahandlers.NovaCamera) script.get("camGame");
     }
     public void beat() {
         curBeat++;
@@ -216,7 +216,7 @@ public class MusicBeatState extends Main {
         script.call("stepHit");
     }
 
-    public MusicBeatState getState() {
+    public NovaState getState() {
         return this;
     }
 

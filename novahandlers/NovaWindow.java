@@ -1,6 +1,6 @@
-package com.example.fnfaffinity.novahandlers;
+package NovaJaxe.novahandlers;
 
-public class OldWindow {
+public class NovaWindow {
     public static double x = 0;
     public static double y = 0;
     public static double width = 0;

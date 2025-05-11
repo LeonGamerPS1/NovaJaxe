@@ -1,6 +1,5 @@
 package NovaJaxe;
 import NovaJaxe.backend.utils.CoolUtil;
-import NovaJaxe.backend.utils.MusicBeatState;
 import NovaJaxe.novahandlers.*;
 import NovaJaxe.fnfaffinity.novahandlers.caches.FileCache;
 import NovaJaxe.fnfaffinity.novahandlers.caches.FontCache;
@@ -53,7 +52,7 @@ public class Main extends Application {
     public static String windowIcon = "windowIcon.png";
     public static boolean enableDebugTraces = true; // use CoolUtil.trace(); for debug.
     public static double fps = 60; // Window framerate.
-    public static MusicBeatState startingState = new ExampleState(); // First state.
+    public static NovaState startingState = new ExampleState(); // First state.
     public static double volume = 0.5; // 0.5 is default, is also best.
     public static String resourcePath = "src/main/resources/yourPathHere";
 
@@ -123,10 +122,10 @@ public class Main extends Application {
         int height = (int)size.getHeight();
 
 
-        if (OldWindow.width == 0)
+        if (NovaWindow.width == 0)
         {
-            OldWindow.width = 1280;
-            OldWindow.height = 720;
+            NovaWindow.width = 1280;
+            NovaWindow.height = 720;
         }
 
 
@@ -146,7 +145,7 @@ public class Main extends Application {
         globalStage.show();
 
         // Switch to starting state.
-        MusicBeatState.switchState(startingState);
+        NovaState.switchState(startingState);
         //addGlobal(transitionSprite);
 
 
