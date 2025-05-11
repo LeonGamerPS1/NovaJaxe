@@ -1,4 +1,4 @@
-package com.example.fnfaffinity.novahandlers;
+package NovaJaxe.novahandlers;
 
 public class NovaAnimController {
     public String name;

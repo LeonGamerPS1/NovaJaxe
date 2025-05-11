@@ -1,6 +1,6 @@
-package com.example.fnfaffinity.novahandlers;
+package NovaJaxe.novahandlers;
 
-import com.example.fnfaffinity.Main;
+import NovaJaxe.Main;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;

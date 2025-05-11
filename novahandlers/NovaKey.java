@@ -1,4 +1,4 @@
-package com.example.fnfaffinity.novahandlers;
+package NovaJaxe.novahandlers;
 
 public class NovaKey {
     public boolean justPressed = false;

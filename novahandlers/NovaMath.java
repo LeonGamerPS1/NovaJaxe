@@ -1,6 +1,6 @@
-package com.example.fnfaffinity.novahandlers;
+package NovaJaxe.novahandlers;
 
-import static com.example.fnfaffinity.Main.fps;
+import static NovaJaxe.Main.fps;
 
 public class NovaMath {
     public static double lerp(double start, double end, double amt) {

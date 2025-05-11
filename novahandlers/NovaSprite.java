@@ -1,12 +1,12 @@
-package com.example.fnfaffinity.novahandlers;
+package NovaJaxe.novahandlers;
 
-import com.example.fnfaffinity.Main;
-import com.example.fnfaffinity.novahandlers.caches.ImageCache;
+import NovaJaxe.Main;
+import NovaJaxe.novahandlers.caches.ImageCache;
 import javafx.scene.image.Image;
 
 import java.util.Objects;
 
-import static com.example.fnfaffinity.Main.camGame;
+import static NovaJaxe.Main.camGame;
 
 public class NovaSprite extends NovaBasic {
     public String path;

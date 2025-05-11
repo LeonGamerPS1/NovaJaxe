@@ -1,6 +1,6 @@
-package com.example.fnfaffinity.novahandlers;
+package NovaJaxe.novahandlers;
 
-import com.example.fnfaffinity.Main;
+import NovaJaxe.Main;
 import org.json.JSONObject;
 
 public class NovaBasic {

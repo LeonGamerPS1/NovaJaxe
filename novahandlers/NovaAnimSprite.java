@@ -1,4 +1,4 @@
-package com.example.fnfaffinity.novahandlers;
+package NovaJaxe.novahandlers;
 
 import java.util.Objects;
 import java.util.Vector;
