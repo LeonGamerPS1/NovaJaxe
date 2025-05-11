@@ -72,11 +72,6 @@ public class Main extends Application {
     public static Vector<Object> objects = new Vector<Object>(0);
     static Vector<Object> objectsGlobal = new Vector<Object>(0);
     public static double globalAlpha = 1.0;
-    //public static double transitionTime = 1.0;
-    //public static Clip music;
-    //public static Clip confirm;
-    //public static Clip scrollMenu;
-    //public static Clip cancel;
     static Boolean borderless = false;
     public static NovaCamera camGame = new NovaCamera(0, 0);
 
@@ -85,27 +80,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException, NoSuchFieldException, IllegalAccessException {
-        // Discord RPC
-        //Discord.initialize();
-        //Discord.setDescription("In The Menus.");
-
-        //transitionSprite.setScrollFactor(0, 0);
-        //transitionSprite.y = -(720 * 4) - (720.0 / 2);
         globalStage = stage;
         globalStage.setTitle(windowTitle);
         globalStage.initStyle(StageStyle.DECORATED);
-
-        //System.out.println(stage);
-        /* 
-        // Menu Music Example
-        music = CoolUtil.getClip("audio/menu/theme/freakyMenu.wav");
-        music.start();
-        
-        // Stuff for sounds
-        confirm = CoolUtil.getClip("audio/menu/navigation/confirm.wav");
-        scrollMenu = CoolUtil.getClip("audio/menu/navigation/scroll.wav");
-        cancel = CoolUtil.getClip("audio/menu/navigation/cancel.wav");
-        */
 
         final double W = globalStage.getWidth();
         final double H = globalStage.getHeight();
@@ -128,10 +105,6 @@ public class Main extends Application {
             NovaWindow.height = 720;
         }
 
-
-        //System.out.println("Current Screen resolution : "
-        //        + "width : " + width
-        //        + " height : " + height);
         globalStage.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -146,9 +119,7 @@ public class Main extends Application {
 
         // Switch to starting state.
         NovaState.switchState(startingState);
-        //addGlobal(transitionSprite);
-
-
+        
         globalStage.getScene().setOnKeyPressed(e -> {
             for (String i : NovaKeys.keyList) {
                 try {
@@ -191,35 +162,9 @@ public class Main extends Application {
                 }
             }
         });
-
-        /*globalStage.getScene().setOnKeyPressed(e -> {
-            switch (e.getCode()) {
-                case KeyCode.ENTER:
-                    if (!NovaKeys.ENTER.pressed && NovaKeys.ENTER.frame == -1) {
-                        NovaKeys.ENTER.pressed = true;
-                        NovaKeys.ENTER.justPressed = true;
-                        NovaKeys.ENTER.frame = 1;
-                    }
-            }
-        });
-        globalStage.getScene().setOnKeyReleased(e -> {
-            switch (e.getCode()) {
-                case KeyCode.ENTER:
-                    if (NovaKeys.ENTER.pressed && NovaKeys.ENTER.frame == -1) {
-                        NovaKeys.ENTER.pressed = false;
-                        NovaKeys.ENTER.justReleased = true;
-                        NovaKeys.ENTER.frame = 1;
-                    }
-            }
-        });*/
     }
 
-    /*private void doThing() {
-    }*/
 
-    //public void create() {
-
-    //}
 
 
     public static void add(NovaText text) {
@@ -273,13 +218,6 @@ public class Main extends Application {
     private static int errcount = 0;
     private static boolean updateVolume = true;
     public static void global_update() throws ParserConfigurationException, IOException, SAXException {
-        /*if (transitionOutTimer != null)
-        {
-            if (globalAlpha < 0.01) {
-                transitionOutTimer.stop();
-                System.out.println("Transition Finished");
-            }
-        }*/
         /* Uncomment this code block if you want to enable the options file.
         try {
             options = CoolUtil.parseJson("data/options");
@@ -323,57 +261,19 @@ public class Main extends Application {
             CoolUtil.setOption("volume", volume);
             updateVolume = true;
         }
-        
-        
         */ // Comment Ends Here
-
-        /*
-        if (transitionOutActive) {
-            transitionTime = lerp(transitionTime, 0, getDtFinal(10));
-            transitionSprite.y = lerp(transitionSprite.y,   -(720 * 2), getDtFinal(10));
-            //System.out.println(globalAlpha);
-            if (transitionTime < 0.01) {
-                transitionOutActive = false;
-                if (onTransitionCompleted != null) {
-                    onTransitionCompleted.run();
-                    onTransitionCompleted = null;
-                }
-            }
-        }
-        if (transitionInActive) {
-            final int transitionInLength = 5;
-            transitionTime = lerp(transitionTime, transitionInLength, getDtFinal(10/transitionInLength));
-            //System.out.println(globalAlpha);
-            if (transitionTime >= transitionInLength-1) {
-                transitionSprite.y = lerp(transitionSprite.y, 720, getDtFinal(10));
-            }
-            if (transitionTime > transitionInLength-0.01) {
-                transitionTime = 1;
-                transitionInActive = false;
-                if (onTransitionCompleted != null) {
-                    onTransitionCompleted.run();
-                    onTransitionCompleted = null;
-                }
-            }
-        }
-        */
-        //System.out.println(globalAlpha);
+        
+        
         double canvasScaleX = globalStage.getWidth()/1280;
         double canvasScaleY = globalStage.getHeight()/720;
         double finalScale = Math.max(canvasScaleX, canvasScaleY);
-        //globalCanvas.setWidth(globalStage.getWidth() + (1280*2));
         globalCanvas.setTranslateX((globalStage.getWidth()/2)-(1280/2));
         globalCanvas.setTranslateY(((globalStage.getHeight()-30)/2)-(720/2));
         globalCanvas.setScaleX(finalScale*camGame.zoom);
         globalCanvas.setScaleY(finalScale*camGame.zoom);
-        //if (!enableGhosting) {
-            globalContext.setFill(Paint.valueOf("0x00000000"));
-            globalContext.fillRect(0-(10000000/2), 0-(10000000/2), globalCanvas.getWidth()+10000000, globalCanvas.getHeight()+10000000);
-        //}
-        //globalContext.fill();
-
-        //globalSpriteOffsetX = global.getWidth();
-
+        globalContext.setFill(Paint.valueOf("0x00000000"));
+        globalContext.fillRect(0-(10000000/2), 0-(10000000/2), globalCanvas.getWidth()+10000000, globalCanvas.getHeight()+10000000);
+     
         Vector<Object> spritesDrawn = new Vector<Object>(0);
         for (Object object : objects) {
             if (!spritesDrawn.contains(object)) {
@@ -745,53 +645,7 @@ public class Main extends Application {
     public static void clearObj() {
         objects = new Vector<Object>(0);
     }
-    /*
-    public static void doTransition(String type) {
-        if (Objects.equals(type, "out")) {
-            transitionTime = 1;
-            new NovaTimer(1000, new Runnable() {
-                @Override
-                public void run() {
-                    transitionSprite.y = -(720 * 4) - (720.0 / 2);
-                    transitionOutActive = true;
-                }
-            });
-        }
-        if (Objects.equals(type, "in")) {
-            // = 0;
-            new NovaTimer(10000, new Runnable() {
-                @Override
-                public void run() {
-                    transitionSprite.y =  -(720 * 2);
-                    transitionInActive = true;
-                }
-            });
-        }
-    }
-    public static void doTransition(String type, Runnable callback) {
-        if (Objects.equals(type, "out")) {
-            transitionTime = 1;
-            new NovaTimer(1000, new Runnable() {
-                @Override
-                public void run() {
-                    transitionSprite.y = -(720 * 4) - (720.0 / 2);
-                    transitionOutActive = true;
-                }
-            });
-        }
-        if (Objects.equals(type, "in")) {
-            //globalAlpha = 0;
-            new NovaTimer(100000, new Runnable() {
-                @Override
-                public void run() {
-                    transitionSprite.y =  -(720 * 2);
-                    transitionInActive = true;
-                }
-            });
-        }
-        onTransitionCompleted = callback;
-    }
-    */
+
     public static String readFileAsString(String file)throws Exception
     {
         return new String(Files.readAllBytes(Paths.get(file)));
