@@ -1,15 +1,14 @@
-package com.example.fnfaffinity; // will have to change everything from here
-//import com.example.fnfaffinity.backend.discord.Discord;
-import com.example.fnfaffinity.backend.utils.CoolUtil;
-import com.example.fnfaffinity.backend.utils.MusicBeatState;
-import com.example.fnfaffinity.novahandlers.*;
-import com.example.fnfaffinity.novahandlers.caches.FileCache;
-import com.example.fnfaffinity.novahandlers.caches.FontCache;
-import com.example.fnfaffinity.novahandlers.caches.ImageCache;
-import com.example.fnfaffinity.states.ExampleState;
-import static com.example.fnfaffinity.novahandlers.NovaMath.getDtFinal;
-import static com.example.fnfaffinity.novahandlers.NovaMath.lerp;
-// To here.
+package NovaJaxe;
+import NovaJaxe.backend.utils.CoolUtil;
+import NovaJaxe.backend.utils.MusicBeatState;
+import NovaJaxe.novahandlers.*;
+import NovaJaxe.fnfaffinity.novahandlers.caches.FileCache;
+import NovaJaxe.fnfaffinity.novahandlers.caches.FontCache;
+import NovaJaxe.fnfaffinity.novahandlers.caches.ImageCache;
+import NovaJaxe.fnfaffinity.states.ExampleState;
+import static NovaJaxe.fnfaffinity.novahandlers.NovaMath.getDtFinal;
+import static NovaJaxe.fnfaffinity.novahandlers.NovaMath.lerp;
+
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -88,8 +87,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException, NoSuchFieldException, IllegalAccessException {
         // Discord RPC
-        Discord.initialize();
-        Discord.setDescription("In The Menus.");
+        //Discord.initialize();
+        //Discord.setDescription("In The Menus.");
 
         //transitionSprite.setScrollFactor(0, 0);
         //transitionSprite.y = -(720 * 4) - (720.0 / 2);

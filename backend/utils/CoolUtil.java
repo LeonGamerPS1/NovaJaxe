@@ -1,17 +1,14 @@
-package com.example.fnfaffinity.backend.utils;
+package NovaJaxe.backend.utils;
 
-import com.example.fnfaffinity.Main;
-import com.example.fnfaffinity.backend.objects.Note;
-import com.example.fnfaffinity.backend.objects.StrumLine;
-import com.example.fnfaffinity.backend.objects.SustainNote;
-import com.example.fnfaffinity.backend.scripting.Script;
-import com.example.fnfaffinity.backend.objects.FunkinCharacter;
-import com.example.fnfaffinity.novahandlers.NovaAnimSprite;
-import com.example.fnfaffinity.novahandlers.NovaKey;
-import com.example.fnfaffinity.novahandlers.NovaSprite;
-import com.mpatric.mp3agic.InvalidDataException;
-import com.mpatric.mp3agic.Mp3File;
-import com.mpatric.mp3agic.UnsupportedTagException;
+import NovaJaxe.Main;
+import NovaJaxe.backend.objects.Note;
+import NovaJaxe.backend.objects.StrumLine;
+import NovaJaxe.backend.objects.SustainNote;
+import NovaJaxe.backend.scripting.Script;
+import NovaJaxe.backend.objects.FunkinCharacter;
+import NovaJaxe.novahandlers.NovaAnimSprite;
+import NovaJaxe.novahandlers.NovaKey;
+import NovaJaxe.novahandlers.NovaSprite;
 import javafx.scene.media.AudioClip;
 import org.json.*;
 import org.w3c.dom.Document;
@@ -493,19 +490,5 @@ public class CoolUtil extends Main  {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static long getMP3duration(String filePath) {
-        Mp3File mp3file = null;
-        try {
-            mp3file = new Mp3File(Path.of(pathify(filePath)));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (UnsupportedTagException e) {
-            throw new RuntimeException(e);
-        } catch (InvalidDataException e) {
-            throw new RuntimeException(e);
-        }
-        return mp3file.getLengthInMilliseconds();
     }
 }
