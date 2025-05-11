@@ -1,14 +1,7 @@
 package NovaJaxe.backend.utils;
 
 import NovaJaxe.Main;
-import NovaJaxe.backend.objects.Note;
-import NovaJaxe.backend.objects.StrumLine;
-import NovaJaxe.backend.objects.SustainNote;
-import NovaJaxe.backend.scripting.Script;
-import NovaJaxe.backend.objects.FunkinCharacter;
-import NovaJaxe.novahandlers.NovaAnimSprite;
-import NovaJaxe.novahandlers.NovaKey;
-import NovaJaxe.novahandlers.NovaSprite;
+import NovaJaxe.novahandlers.*;
 import javafx.scene.media.AudioClip;
 import org.json.*;
 import org.w3c.dom.Document;
@@ -252,71 +245,6 @@ public class CoolUtil extends Main  {
         int n = arr.length;
         int i;
         NovaAnimSprite[] newarr = new NovaAnimSprite[n + 1];
-        for (i = 0; i < n; i++)
-            newarr[i] = arr[i];
-
-        newarr[n] = x;
-
-        return newarr;
-    }
-
-    public static FunkinCharacter[] addToArray(FunkinCharacter arr[], FunkinCharacter x)
-    {
-        int n = arr.length;
-        int i;
-        FunkinCharacter[] newarr = new FunkinCharacter[n + 1];
-        for (i = 0; i < n; i++)
-            newarr[i] = arr[i];
-
-        newarr[n] = x;
-
-        return newarr;
-    }
-
-    public static Note[] addToArray(Note arr[], Note x)
-    {
-        int n = arr.length;
-        int i;
-        Note[] newarr = new Note[n + 1];
-        for (i = 0; i < n; i++)
-            newarr[i] = arr[i];
-
-        newarr[n] = x;
-
-        return newarr;
-    }
-
-    public static Script[] addToArray(Script arr[], Script x)
-    {
-        int n = arr.length;
-        int i;
-        Script[] newarr = new Script[n + 1];
-        for (i = 0; i < n; i++)
-            newarr[i] = arr[i];
-
-        newarr[n] = x;
-
-        return newarr;
-    }
-
-    public static SustainNote[] addToArray(SustainNote arr[], SustainNote x)
-    {
-        int n = arr.length;
-        int i;
-        SustainNote[] newarr = new SustainNote[n + 1];
-        for (i = 0; i < n; i++)
-            newarr[i] = arr[i];
-
-        newarr[n] = x;
-
-        return newarr;
-    }
-
-    public static StrumLine[] addToArray(StrumLine arr[], StrumLine x)
-    {
-        int n = arr.length;
-        int i;
-        StrumLine[] newarr = new StrumLine[n + 1];
         for (i = 0; i < n; i++)
             newarr[i] = arr[i];
 

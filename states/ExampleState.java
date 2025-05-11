@@ -1,12 +1,11 @@
-package com.example.fnfaffinity.states;
+package NovaJaxe.states;
 
-import com.example.fnfaffinity.backend.utils.ConsoleColors;
-import com.example.fnfaffinity.backend.utils.CoolUtil;
-import com.example.fnfaffinity.backend.utils.MusicBeatState;
-import com.example.fnfaffinity.backend.utils.WindowUtil;
-import com.example.fnfaffinity.novahandlers.*;
+import NovaJaxe.backend.utils.ConsoleColors;
+import NovaJaxe.backend.utils.CoolUtil;
+import NovaJaxe.backend.utils.WindowUtil;
+import NovaJaxe.novahandlers.*;
 
-public class ExampleState extends MusicBeatState {
+public class ExampleState extends NovaState {
 
     public void preUpdate() {
         super.preUpdate();

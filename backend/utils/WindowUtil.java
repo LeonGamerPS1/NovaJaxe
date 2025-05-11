@@ -1,6 +1,6 @@
-package com.example.fnfaffinity.backend.utils;
+package NovaJaxe.backend.utils;
 
-import com.example.fnfaffinity.Main;
+import NovaJaxe.Main;
 import javafx.scene.image.Image;
 
 import java.util.Objects;

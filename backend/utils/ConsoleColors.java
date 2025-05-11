@@ -1,4 +1,4 @@
-package com.example.fnfaffinity.backend.utils;
+package NovaJaxe.backend.utils;
 
 public class ConsoleColors {
     // Reset
